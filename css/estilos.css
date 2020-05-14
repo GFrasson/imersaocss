@@ -1,38 +1,163 @@
+/* soft reset do css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    background-image:   url('http://www.vanessametonini.com.br/imersaocss/a1/img/fundo.jpg');
-    background-size: auto 100vh;
-    font-family: courier new;
-    height: 100vh;
+  background-image: url('../img/fundo2.jpg');
+  background-size: 100vw 100vh;
+  background-position: center;
+  font-family: 'Courier New', Courier, monospace;
+  height: 100vh;
+  font-size: 14px;
+  color: whitesmoke;
+}
+
+/* Se a tela tiver pelo menos 400px vai carregar estes estilos */
+@media (min-width: 400px) {
+  body {
+    font-size: 16px;
   }
-  
-  .menu {
-    background-color: white;
+}
+
+/* Breakpoint */
+@media (min-width: 600px) {
+  body {
+    font-size: 18px;
   }
-  
-  .menu ul {
-    display: flex;
-    justify-content: space-around;
+}
+
+header {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu {
+  background-color: white;
+  position: fixed;
+  width: 100vw;
+  top: 0;
+  z-index: 1;
+}
+
+.menu ul {
+  display: flex;
+  justify-content: space-around;
+}
+
+.menu li {
+  list-style: none;
+}
+
+.menu a {
+  display: block;
+  padding: 10px 20px;
+  transition: background-color 0.5s, color 0.5s;
+}
+
+.menu a:active,
+.menu a:hover {
+  background-color: rgb(59, 128, 128);
+  color: whitesmoke;
+}
+
+a {
+  text-decoration: none;
+  color: teal
+}
+
+.site-title, 
+.site-subtitle {
+  text-align: center;
+}
+
+.site-title {
+  font-size: 4em;
+  font-family: 'Amatic SC', cursive;
+}
+
+.site-subtitle {
+  font-style: italic;
+}
+
+@keyframes pisca {
+  0%, 100% {
+    opacity: 1;
   }
-  
-  .menu li {
-    list-style: none;
+  50% {
+    opacity: 0;
   }
-  
-  a {
-    text-decoration: none;
-    color: teal
+}
+
+.site-subtitle::after {
+  content: '_';
+  opacity: 1;
+  animation: step-start 1.07s pisca infinite; 
+}
+
+.contato,
+.projetos {
+  padding: 2em;
+  min-height: 100vh;
+}
+
+.contato h2,
+.projetos h2 {
+  font-family: 'Megrim', cursive;
+  font-size: 2em;
+  margin-bottom: 1em;
+  margin-top: 0.5em;
+  text-shadow: 0px 0px 5px whitesmoke;
+}
+
+.projetos .grid {
+  display: grid;
+  gap: 3em;
+  justify-content: space-evenly;
+}
+
+@media (min-width: 560px) {
+  .projetos .grid {
+    grid-template-columns: 240px 240px;
   }
-  
-  a:hover {
-    text-decoration: underline;
+}
+
+@media (min-width: 880px) {
+  .projetos .grid {
+    grid-template-columns: repeat(3, 240px);
+    height: calc(100vh - 8em - 48px);
+    align-content: center;
   }
-  
-  .site-title, 
-  .site-subtitle {
-    color: whitesmoke;
-    text-align: center;
-  }
-  
-  .site-subtitle {
-    font-style: italic;
-  }
+}
+
+.img-projetos {
+  width: 240px;
+  height: 180px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 10%;
+  transition: transform 0.5s;
+  cursor: pointer;
+}
+
+.img-projetos:hover {
+  transform: scale(1.2);
+}
+
+.contato .icons {
+  text-align: center;
+}
+
+.contato a {
+  font-size: 4em;
+  transition: text-shadow 0.3s;
+}
+
+.contato a:active,
+.contato a:hover {
+  text-shadow: 0px 0px 6px teal;
+}

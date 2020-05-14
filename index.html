@@ -1,21 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gabriel Frasson</title>
     <link rel="stylesheet" href="css\estilos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Megrim&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/4c14ffca6f.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
     <header>
         <nav class='menu'>
-          <ul>
-            <li><a href='#'>Sobre</a></li>
-            <li><a href='#'>Portifólio</a></li>
-            <li><a href='#'>Contato</a></li>
-          </ul>
+            <ul>
+                <li><a href='#sobre'>Sobre</a></li>
+                <li><a href='#projetos'>Projetos</a></li>
+                <li><a href='#contato'>Contato</a></li>
+            </ul>
         </nav>
-        <h1 class='site-title'>Gabriel Frasson Costa</h1>
-        <h2 class='site-subtitle'>Learing web development</h2>
+        <div class="titulos">
+            <h1 class='site-title'>Gabriel Frasson Costa</h1>
+            <h2 class='site-subtitle'>Learning web development</h2>
+        </div>
     </header>
+    <section class="projetos" id="projetos">
+        <h2>Projetos</h2>
+
+        <div class="grid">
+            <figure>
+                <img class="img-projetos" src="img/edificacoes.jpg" alt="Técnico em Edificações">
+                <figcaption>Técnico em Edificações</figcaption>
+            </figure>
+            <figure>
+                <img class="img-projetos" src="./img/programacao.jfif" alt=">Programação">
+                <figcaption>Programação</figcaption>
+            </figure>
+            <figure>
+                <img class="img-projetos" src="./img/musica.jpg" alt="Música">
+                <figcaption>Música</figcaption>
+            </figure>
+            <figure>
+                <img class="img-projetos" src="./img/projpessoais-creditos-hal-gatewood-unsplash.jpg"
+                    alt="Projetos pessoais">
+                <figcaption>Projetos Pessoais</figcaption>
+            </figure>
+        </div>
+
+    </section>
+    <section class="contato" id="contato">
+        <h2>Contato</h2>
+
+          <div class="grid icons">
+          <a target="_blank" href="https://github.com/GFrasson">
+            <i class="fab fa-github"></i>
+          </a>
+          <a target="_blank" href="https://www.facebook.com/gabriel.fc.965/">
+            <i class="fab fa-facebook"></i>
+          </a>
+          <a target="_blank" href="https://www.instagram.com/gabriel.frasson/">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="mailto:bielfc27@gmail.com">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+
+    </section>
+    <script>
+
+        function typeWriter(elemento) {
+          const textoArray = elemento.innerHTML.split("");
+          elemento.innerHTML = "";
+          textoArray.forEach(function(letra, i) {
+         setTimeout(function() {
+          elemento.innerHTML += letra;
+         }, 100 * i)
+
+          });
+        }
+        
+        const texto = document.querySelector('.site-subtitle');
+        typeWriter(texto);
+
+    </script>
 </body>
+
 </html>
